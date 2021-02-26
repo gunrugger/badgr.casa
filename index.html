@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>New Tab</title>
+  <meta charset="UTF-8">
+  <script src="index.js"></script> 
+    <script>
+    function rmDocs(elem)
+    {
+        id=elem.id;
+        jiraLinks = allJiraLinks[id];
+        window.open('https://confluence.concentricsky.com/display/BADGR/Deployment+Steps+'+id);
+        window.open('https://confluence.concentricsky.com/display/BADGR/Release+Process+'+id);
+        for (i = 0; i < jiraLinks.length; i++)
+        { 
+            jiraLink = jiraLinks[i]
+            window.open(jiraLinks[i]);
+        }
+        window.close();
+    }
+
+    allJiraLinks=
+    {
+        "2.27": ['https://jira.concentricsky.com/browse/BP-5143', 'https://jira.concentricsky.com/projects/BP/versions/27354'],
+        "2.28": ['https://jira.concentricsky.com/browse/BP-5154', 'https://jira.concentricsky.com/projects/BP/versions/27372'],
+        "2.29": ['https://jira.concentricsky.com/browse/BP-5263', 'https://jira.concentricsky.com/projects/BP/versions/27378'],
+    }
+    </script>
+
+</head>
+
+<body>
+    <div class="releaseManagement">
+        <div onclick="rmDocs(this)" class="rmDocLink" id="2.27">Release: 2.27</div>
+        <div onclick="rmDocs(this)" class="rmDocLink" id="2.28">Release: 2.28</div>
+        <div onclick="rmDocs(this)" class="rmDocLink" id="2.29">Release: 2.29</div>
+    </div>
+
+</body>
